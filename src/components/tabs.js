@@ -20,7 +20,7 @@ const Tabs = props => {
     const headers = [];
     for(var i = 0; i < arr.length; i++){
         headers.push(
-            <div className="tabHeader" key={i} id={i} onClick={clickHandler}>{ arr[i].label }</div>
+            <div className="tabHeader" key={i} id={i} onClick={(e) => {clickHandler(e)}}>{ arr[i].label }</div>
         )
     }
     let contentBox = <div className="contentBox">{ cont }</div>
