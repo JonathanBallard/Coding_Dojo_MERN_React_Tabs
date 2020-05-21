@@ -1,26 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
+import Tabs from './components/tabs';
 import './App.css';
 
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const props1 = {
+        arr:[{label:"tab1", content:"tab1 Content"},{label:"tab2", content:"tab2 Content"},{label:"tab3", content:"tab3 Content"}]
+    }
+    const props2 = {
+        arr:[{label:"tab1", content:"tab1 Content"},{label:"tab2", content:"tab2 Content"},{label:"tab3", content:"tab3 Content"}]
+    }
+
+    return (
+        <div className="App">
+            <Tabs info={props1} ></Tabs>
+        </div>
+    );
 }
 
 export default App;
