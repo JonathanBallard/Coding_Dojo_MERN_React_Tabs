@@ -16,11 +16,22 @@ const Tabs = props => {
         //set content to correct array index
         setCont(arr[e.target.id].content);
     }
+
+    const hoverHandler = e => {
+        e.target.style.background = "yellow";
+        e.target.style.color = "black";
+    }
+
+    const unHoverHandler = e => {
+        e.target.style.background = "blue";
+        e.target.style.color = "white";
+    }
+
     // ({content} = arr[1])
     const headers = [];
     for(var i = 0; i < arr.length; i++){
         headers.push(
-            <div className="tabHeader" key={i} id={i} onClick={(e) => {clickHandler(e)}}>{ arr[i].label }</div>
+            <div className="tabHeader" key={i} id={i} onMouseLeave={unHoverHandler} onMouseEnter={hoverHandler} onClick={(e) => {clickHandler(e)}}>{ arr[i].label }</div>
         )
     }
     let contentBox = <div className="contentBox">{ cont }</div>
